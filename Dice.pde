@@ -33,7 +33,6 @@ class Die {//models one single dice cube
 
 	void roll() {
 		myVal = (int) (Math.random() * 6) + 1;
-		System.out.println(myVal);
 	}
 
 	void show()
