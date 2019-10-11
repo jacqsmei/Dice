@@ -1,7 +1,7 @@
 void setup() {
-  size(900,900);
+  size(900, 900);
   background(192);
-  textAlign(CENTER,CENTER);
+  textAlign(CENTER, CENTER);
   noLoop();
 }
 
@@ -23,7 +23,7 @@ class Die {//models one single dice cube
 
   //variable declarations
   int myX, myY, myVal;
-  
+
   Die(int x, int y) { //constructor 
     //variable initializations
     myX = x;
@@ -43,32 +43,60 @@ class Die {//models one single dice cube
     fill(0);
     stroke(0);
     if (myVal == 1) {
-      ellipse(myX+35, myY+35, 10, 10);
+      center();
     } else if (myVal == 2) {
-      ellipse(myX+10, myY+10, 10, 10);
-      ellipse(myX+60, myY+60, 10, 10);
+      topLeft();
+      bottomRight();
     } else if (myVal == 3) {
-      ellipse(myX+60, myY+10, 10, 10);
-      ellipse(myX+35, myY+35, 10, 10);
-      ellipse(myX+10, myY+60, 10, 10);
+      topRight();
+      center();
+      bottomLeft();
     } else if (myVal == 4) {
-      ellipse(myX+10, myY+10, 10, 10);
-      ellipse(myX+60, myY+10, 10, 10);
-      ellipse(myX+10, myY+60, 10, 10);
-      ellipse(myX+60, myY+60, 10, 10);
+      topLeft();
+      topRight();
+      bottomLeft();
+      bottomRight();
     } else if (myVal == 5) {
-      ellipse(myX+10, myY+10, 10, 10);
-      ellipse(myX+60, myY+10, 10, 10);
-      ellipse(myX+10, myY+60, 10, 10);
-      ellipse(myX+60, myY+60, 10, 10);
-      ellipse(myX+35, myY+35, 10, 10);
+      center();
+      topLeft();
+      topRight();
+      bottomLeft();
+      bottomRight();
     } else {
-      ellipse(myX+10, myY+10, 10, 10);
-      ellipse(myX+60, myY+10, 10, 10);
-      ellipse(myX+10, myY+60, 10, 10);
-      ellipse(myX+60, myY+60, 10, 10);
-      ellipse(myX+10, myY+35, 10, 10);
-      ellipse(myX+60, myY+35, 10, 10);
+      topLeft();
+      topRight();
+      bottomLeft();
+      bottomRight();
+      middleLeft();
+      middleRight();
     }
+  }
+
+  void center() {
+    ellipse(myX+35, myY+35, 10, 10);
+  }
+
+  void topLeft() {
+    ellipse(myX+10, myY+10, 10, 10);
+  }
+
+  void bottomRight() {
+    ellipse(myX+60, myY+60, 10, 10);
+  }
+
+  void topRight() {
+    ellipse(myX+60, myY+10, 10, 10);
+  }
+
+  void bottomLeft() {
+    ellipse(myX+10, myY+60, 10, 10);
+  }
+
+  void middleLeft() {
+    ellipse(myX+10, myY+35, 10, 10);
+  }
+
+  void middleRight() {
+    ellipse(myX+60, myY+35, 10, 10);
   }
 }
