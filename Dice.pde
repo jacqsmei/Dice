@@ -1,30 +1,34 @@
 void setup() {
-  size(900, 900);
+  size(900, 1000);
   background(192);
   textAlign(CENTER, CENTER);
+  textSize(20);
   noLoop();
 }
 
 void draw() {
   background(192);
+  int numDots = 0;
   for (int row = 15; row < 900; row += 100) {
     for (int col = 15; col < 900; col += 100) {
       Die bob = new Die(col, row);
       bob.show();
+      numDots+=bob.myVal;
     }
   }
+  text("Number of dots: " + numDots, 450, 950);
 }
 
 void mousePressed() {
   redraw();
 }
 
-class Die {//models one single dice cube 
+class Die { //models one single dice cube
 
   //variable declarations
   int myX, myY, myVal;
 
-  Die(int x, int y) { //constructor 
+  Die(int x, int y) { //constructor
     //variable initializations
     myX = x;
     myY = y;
